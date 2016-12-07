@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -14,6 +8,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -23,102 +18,109 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <children>
-      <SplitPane dividerPositions="0.2661469933184855" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-         <items>
-            <VBox>
-               <children>
-                  <Label alignment="CENTER" style="&#10;" text="Máquina de Turing" textAlignment="CENTER" wrapText="false">
-                     <font>
-                        <Font size="18.0" fx:id="x1" />
-                     </font>
-                     <textFill>
-                        <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
-                     </textFill>
-                  </Label>
-                  <Separator prefWidth="200.0" />
-                  <Label text="q0 - Estado Inicial&#10;¬  - Símbolo de início da fita&#10;#   - Símbolo branco&#10;" textFill="#000000a5">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="5.0" />
-                     </padding>
-                  </Label>
-                  <Label text="Alfabeto de Entrada:" textFill="#000000a4">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField fx:id="tfAlfabetoEnt" text="a,b" />
-                  <Label text="Conjunto de Estados:" textFill="#000000a4">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField fx:id="tfEstados" text="q0,q1" />
-                  <Label text="Conjunto de Estados Finais:" textFill="#000000a4">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField fx:id="tfEstadosFinais" text="q1" />
-                  <Label text="Conjunto de Símbolos Especiais:" textFill="#000000a4">
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </Label>
-                  <TextField fx:id="tfSimbolosEsp" text="A,B" />
-                  <HBox alignment="CENTER">
+<BorderPane prefHeight="638.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <center>
+      <SplitPane dividerPositions="0.6158833063209076" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+            <SplitPane dividerPositions="0.2661" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0">
+               <items>
+                  <VBox>
                      <children>
-                        <Button mnemonicParsing="false" onAction="#gerarTabela" prefHeight="25.0" prefWidth="125.0" text="Gerar Tabela">
-                           <HBox.margin>
+                        <Label alignment="CENTER" style="&#10;" text="Máquina de Turing" textAlignment="CENTER" wrapText="false">
+                           <font>
+                              <Font size="18.0" fx:id="x1" />
+                           </font>
+                           <textFill>
+                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+                           </textFill>
+                        </Label>
+                        <Separator prefWidth="200.0" />
+                        <Label text="q0 - Estado Inicial&#10;¬  - Símbolo de início da fita&#10;#   - Símbolo branco&#10;" textFill="#000000a5">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Alfabeto de Entrada:" textFill="#000000a4">
+                           <VBox.margin>
                               <Insets top="10.0" />
-                           </HBox.margin>
-                        </Button>
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="tfAlfabetoEnt" text="a,b" />
+                        <Label text="Conjunto de Estados:" textFill="#000000a4">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="tfEstados" text="q0,q1" />
+                        <Label text="Conjunto de Estados Finais:" textFill="#000000a4">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="tfEstadosFinais" text="q1" />
+                        <Label text="Conjunto de Símbolos Especiais:" textFill="#000000a4">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="tfSimbolosEsp" text="A,B" />
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#gerarTabela" prefHeight="25.0" prefWidth="125.0" text="Gerar Tabela">
+                                 <HBox.margin>
+                                    <Insets top="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" />
+                           </VBox.margin>
+                        </HBox>
                      </children>
-                     <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" />
-                     </VBox.margin>
-                  </HBox>
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
-            <ScrollPane prefHeight="576.0" prefWidth="170.0">
-               <content>
-                  <AnchorPane id="Content" fx:id="layout_tabela" minHeight="-1.0" minWidth="-1.0">
-                     <children>
-                        <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="8.0" style="&#10;" text="Tabela de Transições" textAlignment="CENTER" textFill="$x2" wrapText="false" />
-                        <Separator layoutX="5.0" layoutY="34.0" prefHeight="3.0" prefWidth="648.0">
-                           <padding>
-                              <Insets left="10.0" right="10.0" top="3.0" />
-                           </padding>
-                        </Separator>
-                        <GridPane fx:id="grid" layoutY="47.0">
-                          <columnConstraints>
-                            <ColumnConstraints halignment="RIGHT" />
-                            <ColumnConstraints hgrow="SOMETIMES" />
-                              <ColumnConstraints hgrow="SOMETIMES" />
-                          </columnConstraints>
-                          <rowConstraints>
-                            <RowConstraints vgrow="SOMETIMES" />
-                            <RowConstraints vgrow="SOMETIMES" />
-                            <RowConstraints vgrow="SOMETIMES" />
-                          </rowConstraints>
-                           <padding>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
-                           </padding>
-                        </GridPane>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </ScrollPane>
-         </items>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <ScrollPane prefHeight="576.0" prefWidth="684.0">
+                     <content>
+                        <AnchorPane id="Content" fx:id="layout_tabela" minHeight="-1.0" minWidth="-1.0">
+                           <children>
+                              <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="8.0" style="&#10;" text="Tabela de Transições" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                              <Separator layoutX="5.0" layoutY="34.0" prefHeight="3.0" prefWidth="648.0">
+                                 <padding>
+                                    <Insets left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </Separator>
+                              <GridPane fx:id="grid" layoutY="47.0">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="RIGHT" />
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <padding>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                                 </padding>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </items>
+            </SplitPane>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+        </items>
       </SplitPane>
-      <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+   </center>
+   <bottom>
+      <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" BorderPane.alignment="CENTER">
          <children>
             <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Left status" HBox.hgrow="ALWAYS">
                <font>
@@ -135,5 +137,5 @@
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
          </padding>
       </HBox>
-   </children>
-</VBox>
+   </bottom>
+</BorderPane>
