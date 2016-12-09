@@ -114,7 +114,7 @@ public class Controller {
         boolean aceita = false;
         String[][] q = gerarMatriz();
 
-        char[] fita = (CHAR_INICIAL + tfFrase.getText() + CHAR_BRANCO).toCharArray();
+        char[] fita = (CHAR_INICIAL + tfFrase.getText() + CHAR_BRANCO + CHAR_BRANCO + CHAR_BRANCO + CHAR_BRANCO).toCharArray();
 
         int loops = 0;
 
