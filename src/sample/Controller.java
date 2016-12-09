@@ -8,9 +8,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
 
 import java.util.Arrays;
 
+/**
+ * Trabalho Teoria da Computação: Eduardo, Mayandre, Renata e Rodrigo.
+ * Informática Biomédica UFCSPA
+ */
 public class Controller {
     private static final String SEPARADOR = ",";
     public static final int COLUMN_INDEX_ESTADOS = 0;
@@ -151,7 +156,7 @@ public class Controller {
                 break;
             }
 
-            if (isFinal(estadoAtual)) {
+            if (isFinal(estadoAtual)) { //caso o estado atual seja final, a sentença é aceita
                 aceita = true;
                 break;
             }
@@ -183,9 +188,11 @@ public class Controller {
         if (aceita) {
             System.out.println("A máquina reconhece essa sentença");
             lbAceita.setText("A máquina reconhece essa sentença");
+            lbAceita.setTextFill(Paint.valueOf("green"));
         } else {
             System.out.println("A máquina não reconhece essa sentença");
             lbAceita.setText("A máquina não reconhece essa sentença");
+            lbAceita.setTextFill(Paint.valueOf("red"));
         }
     }
 

@@ -1,15 +1,15 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * Trabalho Teoria da Computação: Eduardo, Mayandre, Renata e Rodrigo.
+ * Informática Biomédica UFCSPA
+ */
 public class Main extends Application {
 
     @Override
