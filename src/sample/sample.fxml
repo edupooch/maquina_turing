@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -18,7 +24,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="638.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane prefHeight="638.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <center>
       <SplitPane dividerPositions="0.6465798045602605" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
         <items>
@@ -88,7 +94,7 @@
                      <content>
                         <AnchorPane id="Content" fx:id="layout_tabela" minHeight="-1.0" minWidth="-1.0">
                            <children>
-                              <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="8.0" style="&#10;" text="Tabela de Transições" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                              <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="8.0" style="&#10;" text="Função Programa" textAlignment="CENTER" textFill="$x2" wrapText="false" />
                               <Separator layoutX="5.0" layoutY="34.0" prefHeight="3.0" prefWidth="648.0">
                                  <padding>
                                     <Insets left="10.0" right="10.0" top="3.0" />
@@ -115,7 +121,7 @@
                   </ScrollPane>
                </items>
             </SplitPane>
-            <VBox prefHeight="211.0" prefWidth="947.0">
+            <VBox fx:id="layoutSentenca" disable="true" prefHeight="211.0" prefWidth="947.0">
                <children>
                   <Label alignment="CENTER" style="&#10;" text="Sentença:" textAlignment="CENTER" wrapText="false">
                      <font>
@@ -136,7 +142,7 @@
                         <Insets />
                      </VBox.margin>
                   </Separator>
-                  <TextField fx:id="tfFrase" prefHeight="25.0" prefWidth="430.0" text="a,b">
+                  <TextField fx:id="tfFrase" prefHeight="25.0" prefWidth="430.0" text="aab">
                      <VBox.margin>
                         <Insets bottom="10.0" left="10.0" right="15.0" top="10.0" />
                      </VBox.margin>
