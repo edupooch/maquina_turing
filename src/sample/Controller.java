@@ -2,6 +2,7 @@ package sample;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -17,6 +18,7 @@ public class Controller {
     public static final int ROW_INDEX_SIMBOLOS = 0;
     public static final String CHAR_INICIAL = "*";
     public static final char CHAR_BRANCO = '¬';
+
     /**
      * Ìndices do String[] Nó, no estilo (qo,A,D)
      */
@@ -38,6 +40,8 @@ public class Controller {
     private GridPane grid;
     @FXML
     private VBox layoutSentenca;
+    @FXML
+    private Label lbAceita;
 
     private String[] simbolos;
     private String[] estados;
@@ -50,7 +54,6 @@ public class Controller {
         estados = tfEstados.getText().replace("(", "").replace(")", "").split(SEPARADOR);
         String[] simbolosEspeciais = tfSimbolosEsp.getText().replace("(", "").replace(")", "").split(SEPARADOR);
 
-        //TODO: INCLUIR ASTERISCO NO LABEL DOS ESTADOS FINAIS
         String[] strFinais = tfEstadosFinais.getText().replace("(", "")
                 .replace(")", "").replace("q", "").split(SEPARADOR);
         finais = new int[strFinais.length];
@@ -58,7 +61,6 @@ public class Controller {
             finais[i] = Integer.parseInt(strFinais[i]);
         }
 
-        //TODO: INT[] FINAIS
         int qtEntradas = entradas.length; // quantidade de simbolos no alfabeto de entrada
         int qtAuxiliar = simbolosEspeciais.length; // quantidade de simbolos do alfabeto auxiliar
         int qtEstados = estados.length; //quantidade de estados
@@ -76,6 +78,8 @@ public class Controller {
          * Ciando a Interface Gráfica
          */
         grid.getChildren().clear(); //limpa a tabela que estava antes
+        lbAceita.setText(""); // limpa a mensagem de reconhecimento
+
 
         //Adicionar colunas no grid
         grid.addColumn(COLUMN_INDEX_ESTADOS);//coluna com os labels dos estados
@@ -94,8 +98,14 @@ public class Controller {
         }
 
         //Adicionando os labels das linhas na tabela (estados)
-        for (int i = 0; i < qtEstados; i++) // labels dos simbolos de entrada
-            grid.add(new Label(estados[i]), COLUMN_INDEX_ESTADOS, i + 1);
+        for (int i = 0; i < qtEstados; i++) { // labels dos simbolos de entrada
+            String textoLabel;
+            if (isFinal(i)) textoLabel = "✳" + estados[i];
+            else textoLabel = estados[i];
+            Label label = new Label(textoLabel);
+            label.setPadding(new Insets(0,10,0,0));
+            grid.add(label, COLUMN_INDEX_ESTADOS, i + 1);
+        }
 
         // Adicionar os text fields
         for (int i = 0; i < qtEstados; i++) {
@@ -118,7 +128,6 @@ public class Controller {
 
         int loops = 0;
 
-        //TODO: pegar estado incial ao invés do 0
         int estadoAtual = 0; //pointer do Estado (começa em qo)
         int pointFita = 0; //pointer da Fita (começa em *)
         while (!aceita) {
@@ -164,8 +173,10 @@ public class Controller {
         }
         if (aceita) {
             System.out.println("A máquina reconhece essa sentença");
+            lbAceita.setText("A máquina reconhece essa sentença");
         } else {
             System.out.println("A máquina não reconhece essa sentença");
+            lbAceita.setText("A máquina não reconhece essa sentença");
         }
     }
 
