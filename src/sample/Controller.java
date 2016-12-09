@@ -49,10 +49,19 @@ public class Controller {
 
     public void gerarTabela() {
         //Gera array de strings com os componentes da tabela, removendo os parenteses e separando os índices por vírgula
-        String[] entradas = tfAlfabetoEnt.getText().replace("(", "").replace(")", "").split(SEPARADOR);
-        //TODO: VERIFICAR SE O Q0 É O PRIMEIRO, SE NÃO ADICIONAR ELE COMO PRIMEIRO
+        String[] entradas;
+        if (!tfAlfabetoEnt.getText().isEmpty()) {
+            entradas = tfAlfabetoEnt.getText().replace("(", "").replace(")", "").split(SEPARADOR);
+        } else {
+            entradas = new String[0];
+        }
         estados = tfEstados.getText().replace("(", "").replace(")", "").split(SEPARADOR);
-        String[] simbolosEspeciais = tfSimbolosEsp.getText().replace("(", "").replace(")", "").split(SEPARADOR);
+        String[] simbolosEspeciais;
+        if (!tfSimbolosEsp.getText().isEmpty()) {
+            simbolosEspeciais = tfSimbolosEsp.getText().replace("(", "").replace(")", "").split(SEPARADOR);
+        } else {
+            simbolosEspeciais = new String[0];
+        }
 
         String[] strFinais = tfEstadosFinais.getText().replace("(", "")
                 .replace(")", "").replace("q", "").split(SEPARADOR);
@@ -103,7 +112,7 @@ public class Controller {
             if (isFinal(i)) textoLabel = "✳" + estados[i];
             else textoLabel = estados[i];
             Label label = new Label(textoLabel);
-            label.setPadding(new Insets(0,10,0,0));
+            label.setPadding(new Insets(0, 10, 0, 0));
             grid.add(label, COLUMN_INDEX_ESTADOS, i + 1);
         }
 
