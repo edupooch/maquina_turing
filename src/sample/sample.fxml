@@ -18,9 +18,9 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="638.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane prefHeight="638.0" prefWidth="949.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <center>
-      <SplitPane dividerPositions="0.6158833063209076" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.6465798045602605" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
         <items>
             <SplitPane dividerPositions="0.2661" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0">
                <items>
@@ -115,7 +115,39 @@
                   </ScrollPane>
                </items>
             </SplitPane>
-            <VBox prefHeight="200.0" prefWidth="100.0" />
+            <VBox prefHeight="211.0" prefWidth="947.0">
+               <children>
+                  <Label alignment="CENTER" style="&#10;" text="Sentença:" textAlignment="CENTER" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x111" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <textFill>
+                        <Color blue="0.624" green="0.624" red="0.624" fx:id="x211" />
+                     </textFill>
+                  </Label>
+                  <Separator prefWidth="200.0">
+                     <padding>
+                        <Insets left="10.0" right="15.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Separator>
+                  <TextField fx:id="tfFrase" prefHeight="25.0" prefWidth="430.0" text="a,b">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="15.0" top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#reconhecer" text="Reconhecer">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
         </items>
       </SplitPane>
    </center>
