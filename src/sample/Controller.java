@@ -151,7 +151,7 @@ public class Controller {
                 break;
             }
 
-            if (fita[pointFita] == CHAR_BRANCO && isFinal(estadoAtual)) {
+            if (isFinal(estadoAtual)) {
                 aceita = true;
                 break;
             }
